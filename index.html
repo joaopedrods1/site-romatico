@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Para Yasmin 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 80px;
+    }
+
+    p {
+      font-size: 1.5em;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .heart {
+      font-size: 4em;
+      animation: pulse 1.5s infinite;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 1.2em;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      margin-top: 30px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart-float {
+      position: absolute;
+      color: #ff6b81;
+      font-size: 24px;
+      animation: float 6s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.5) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Corações flutuando -->
+  <div class="floating-hearts" id="hearts-container"></div>
+
+  <h1>Oi, meu amor! 💕</h1>
+  
+  <!-- Foto dela -->
+  <img class="photo" src="https://i.imgur.com/8uXtPSB.jpeg" alt="Foto dela">
+
+  <p>
+    Fiz esse site só pra te lembrar o quanto você é especial pra mim.
+    <br>Você ilumina os meus dias e eu me sinto mais feliz contigo.
+    <br>Obrigado por existir e por ser tão incrivel comigo!❤️
+  </p>
+
+  <div class="heart">❤️</div>
+
+  <div class="footer">
+    Com carinho, <strong>jp💕</strong>
+  </div>
+
+  <!-- Script para criar corações flutuando -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart-float';
+      heart.textContent = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+      document.getElementById('hearts-container').appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
